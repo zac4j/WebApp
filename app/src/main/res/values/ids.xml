@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <item name="main_title_bar" type="id"/>
+  <item name="main_webview" type="id"/>
+  <item name="main_progressbar" type="id"/>
+  <item name="webapp_web_view" type="id"/>
+  <item name="progressbar" type="id"/>
+  <item name="webview" type="id"/>
+  <item name="jsbind_btn_jscaller" type="id"/>
+  <item name="jsbind_et_name_field" type="id"/>
+</resources>

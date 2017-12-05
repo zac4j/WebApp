@@ -1,0 +1,7 @@
+<resources>
+  <string name="app_name">WebApp</string>
+  <string name="web_page_loading">Web page loading</string>
+  <string name="js_bind_enter_hint">enter your name</string>
+  <string name="jsbind_call_js_method">callJsMethod</string>
+  <string name="action_settings">Settings</string>
+</resources>

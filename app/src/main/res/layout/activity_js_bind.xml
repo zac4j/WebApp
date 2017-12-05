@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:gravity="center_horizontal"
+      android:text="Android"
+      android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+      />
+
+  <EditText
+      android:id="@id/jsbind_et_name_field"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:hint="@string/js_bind_enter_hint"
+      />
+
+  <Button
+      android:id="@id/jsbind_btn_jscaller"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/space.small"
+      android:text="@string/jsbind_call_js_method"
+      style="@style/Widget.AppCompat.Button.Colored"
+      />
+
+  <WebView
+      android:id="@id/webview"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      />
+
+</LinearLayout>

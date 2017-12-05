@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+  <title>JsBind</title>
+  <center>
+    <b>
+      <u>JavaScript</u>
+    </b>
+  </center>
+  <script type="text/JavaScript">
+      function getData() {
+        document.getElementById("namefromAndroid").value = jscaller.getNameFromEditText();
+        var HTML = "" + document.getElementById("namefromAndroid").value;
+        alert("JavaScript says: Name entered in Android EditText is " + HTML);
+      }
+      function setData() {
+        var HTML = "" + document.getElementById("namefromjs").value;
+        jscaller.sayHelloFromAndroid(HTML);
+      }
+      function sayHelloFromJS(value) {
+        console.log("sayHelloFromJS");
+        alert("JavaScript says: Hello " + value + " !!! Are you OK?");
+      }
+  </script>
+</head>
+
+<body>
+<p>Enter your name here
+  <input type="text" id="namefromjs"/>
+</p>
+<p>
+  <input type="button" onclick="setData()" value="Call Android sayHelloFromAndroid() method from JS"/>
+</p>
+<p>Data pass from Android</p>
+<p>
+  <input type="button" onclick="getData()" value="Get Name From Android EditText"/>
+</p>
+<p>Name from Android is
+  <input type="text" id="namefromAndroid" />
+</p>
+</body>
+
+</html>
