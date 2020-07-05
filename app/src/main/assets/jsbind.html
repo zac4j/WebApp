@@ -10,13 +10,13 @@
   </center>
   <script type="text/JavaScript">
       function getData() {
-        document.getElementById("namefromAndroid").value = jscaller.getNameFromEditText();
-        var HTML = "" + document.getElementById("namefromAndroid").value;
+        document.getElementById("nameFromAndroid").value = jsCaller.getNameFromEditText();
+        var HTML = "" + document.getElementById("nameFromAndroid").value;
         alert("JavaScript says: Name entered in Android EditText is " + HTML);
       }
       function setData() {
-        var HTML = "" + document.getElementById("namefromjs").value;
-        jscaller.sayHelloFromAndroid(HTML);
+        var name = "" + document.getElementById("nameFromJs").value;
+        jsCaller.sayHelloFromAndroid(name);
       }
       function sayHelloFromJS(value) {
         console.log("sayHelloFromJS");
@@ -27,7 +27,7 @@
 
 <body>
 <p>Enter your name here
-  <input type="text" id="namefromjs"/>
+  <input type="text" id="nameFromJs"/>
 </p>
 <p>
   <input type="button" onclick="setData()" value="Call Android sayHelloFromAndroid() method from JS"/>
@@ -35,9 +35,9 @@
 <p>Data pass from Android</p>
 <p>
   <input type="button" onclick="getData()" value="Get Name From Android EditText"/>
-</p>
+<p/>
 <p>Name from Android is
-  <input type="text" id="namefromAndroid" />
+  <input type="text" id="nameFromAndroid" />
 </p>
 </body>
 
