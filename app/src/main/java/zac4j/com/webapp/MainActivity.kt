@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity(), OnClickListener {
       findViewById<View>(R.id.test_file_chooser).setOnClickListener(this)
       findViewById<View>(R.id.test_js_alert).setOnClickListener(this)
       findViewById<View>(R.id.test_jsi).setOnClickListener(this)
+      findViewById<View>(R.id.test_pdf).setOnClickListener(this)
     }
   }
 
@@ -49,6 +50,7 @@ class MainActivity : AppCompatActivity(), OnClickListener {
       R.id.test_file_chooser -> SecondaryActivity::class.java
       R.id.test_js_alert -> WebAppActivity::class.java
       R.id.test_jsi -> WebJsBindActivity::class.java
+      R.id.test_pdf -> WebPdfViewerActivity::class.java
       else -> null
     }
 

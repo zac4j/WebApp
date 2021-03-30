@@ -7,4 +7,5 @@
   <string name="selector_file_chooser">Test FIle Chooser</string>
   <string name="selector_js_alert">Test Prompt/Alert/Console</string>
   <string name="selector_jsi">Test JavascriptInterface</string>
+  <string name="selector_pdf">Test Pdf Viewer</string>
 </resources>

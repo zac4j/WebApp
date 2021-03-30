@@ -1,35 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/container"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical"
+  tools:context=".MainActivity"
+  tools:ignore="MergeRootFrame">
+
+  <Button
+    android:id="@+id/test_file_chooser"
+    style="@style/Widget.AppCompat.Button.Colored"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity"
-    tools:ignore="MergeRootFrame"
-    >
+    android:layout_height="wrap_content"
+    android:text="@string/selector_file_chooser" />
 
   <Button
-      android:id="@+id/test_file_chooser"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:text="@string/selector_file_chooser"
-      style="@style/Widget.AppCompat.Button.Colored"
-      />
+    android:id="@+id/test_js_alert"
+    style="@style/Widget.AppCompat.Button.Colored"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/selector_js_alert" />
 
   <Button
-      android:id="@+id/test_js_alert"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:text="@string/selector_js_alert"
-      style="@style/Widget.AppCompat.Button.Colored"
-      />
+    android:id="@+id/test_jsi"
+    style="@style/Widget.AppCompat.Button.Colored"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/selector_jsi" />
 
   <Button
-      android:id="@+id/test_jsi"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:text="@string/selector_jsi"
-      style="@style/Widget.AppCompat.Button.Colored"
-      />
+    android:id="@+id/test_pdf"
+    style="@style/Widget.AppCompat.Button.Colored"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/selector_pdf" />
 </LinearLayout>
