@@ -24,9 +24,9 @@ const USE_ONLY_CSS_ZOOM = true;
 const TEXT_LAYER_MODE = 0; // DISABLE
 const MAX_IMAGE_SIZE = 1024 * 1024;
 
-pdfjsLib.GlobalWorkerOptions.workerSrc ="./med/pdf.worker.js";
+pdfjsLib.GlobalWorkerOptions.workerSrc ="./lib/pdf.worker.js";
 
-//const DEFAULT_URL = "";
+const DEFAULT_URL = "https://learnopencv.com/wp-content/uploads/2020/05/Computer-Vision-Resources.pdf";
 const DEFAULT_SCALE_DELTA = 1.1;
 const MIN_SCALE = 0.25;
 const MAX_SCALE = 10.0;
