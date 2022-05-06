@@ -40,7 +40,6 @@ class WebJsBindActivity() : AppCompatActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(layout.activity_js_bind)
-    // 名称输入框
     mNameInput = findViewById<View>(id.jsbind_et_name_field) as EditText
     findViewById<View>(
         id.jsbind_btn_jscaller

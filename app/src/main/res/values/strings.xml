@@ -4,9 +4,9 @@
   <string name="js_bind_enter_hint">enter your name</string>
   <string name="jsbind_call_js_method">callJsMethod</string>
   <string name="action_settings">Settings</string>
-  <string name="selector_file_chooser">Test FIle Chooser</string>
-  <string name="selector_js_alert">Test Prompt/Alert/Console</string>
-  <string name="selector_jsi">Test JavascriptInterface</string>
-  <string name="selector_pdf">Test Pdf Viewer</string>
-  <string name="open_pdf">Open Pdf content</string>
+  <string name="selector_file_chooser">File Chooser</string>
+  <string name="selector_js_alert">Prompt/Alert/Console</string>
+  <string name="selector_jsi">JavaScriptInterface</string>
+  <string name="selector_pdf">Pdf Viewer</string>
+  <string name="open_pdf">Load pdf content</string>
 </resources>

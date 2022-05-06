@@ -13,26 +13,30 @@
     style="@style/Widget.AppCompat.Button.Colored"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="@string/selector_file_chooser" />
+    android:text="@string/selector_file_chooser"
+    android:textAllCaps="false" />
 
   <Button
     android:id="@+id/test_js_alert"
     style="@style/Widget.AppCompat.Button.Colored"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="@string/selector_js_alert" />
+    android:text="@string/selector_js_alert"
+    android:textAllCaps="false" />
 
   <Button
     android:id="@+id/test_jsi"
     style="@style/Widget.AppCompat.Button.Colored"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="@string/selector_jsi" />
+    android:text="@string/selector_jsi"
+    android:textAllCaps="false" />
 
   <Button
     android:id="@+id/test_pdf"
     style="@style/Widget.AppCompat.Button.Colored"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="@string/selector_pdf" />
+    android:text="@string/selector_pdf"
+    android:textAllCaps="false" />
 </LinearLayout>

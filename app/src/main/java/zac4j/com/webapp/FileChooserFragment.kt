@@ -118,20 +118,18 @@ class FileChooserFragment : Fragment() {
    *
    * @throws IOException
    */
-  @Throws(IOException::class) private fun createImageFile(): File {
+  @Throws(IOException::class) private fun createImageFile(): File? {
     // Create an image file name
-    val timeStamp =
-      SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault())
+    val timestamp = SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault())
           .format(Date())
-    val imageFileName = "JPEG_" + timeStamp + "_"
-    val storageDir = Environment.getExternalStoragePublicDirectory(
-        Environment.DIRECTORY_PICTURES
-    )
-    return File.createTempFile(
-        imageFileName,  /* prefix */
+    val filename = "JPEG_" + timestamp + "_"
+    return activity?.filesDir?.let { folder ->
+      File.createTempFile(
+        filename,  /* prefix */
         ".jpg",  /* suffix */
-        storageDir /* directory */
-    )
+        folder /* directory */
+      )
+    }
   }
 
   /**
