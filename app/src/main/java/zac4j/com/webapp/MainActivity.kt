@@ -1,28 +1,37 @@
 package zac4j.com.webapp
 
-import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
-import android.view.View.OnClickListener
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupWithNavController
 import zac4j.com.webapp.R.layout
 
-class MainActivity : AppCompatActivity(), OnClickListener {
+class MainActivity : AppCompatActivity() {
+
+  private lateinit var navController: NavController
+
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
+
     setContentView(layout.activity_main)
-    if (savedInstanceState == null) {
-      Log.v(TAG, "MainFragment Creation")
 
+    val navHostFragment =
+      supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+    navController = navHostFragment.navController
+    val appBarConfiguration = AppBarConfiguration(
+      topLevelDestinationIds = setOf(R.id.home_fragment),
+      fallbackOnNavigateUpListener = ::onSupportNavigateUp
+    )
+    findViewById<Toolbar>(R.id.toolbar).setupWithNavController(navController, appBarConfiguration)
+  }
 
-      findViewById<View>(R.id.test_file_chooser).setOnClickListener(this)
-      findViewById<View>(R.id.test_js_alert).setOnClickListener(this)
-      findViewById<View>(R.id.test_jsi).setOnClickListener(this)
-      findViewById<View>(R.id.test_pdf).setOnClickListener(this)
-    }
+  override fun onSupportNavigateUp(): Boolean {
+    return navController.navigateUp() || super.onSupportNavigateUp()
   }
 
   override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -39,23 +48,5 @@ class MainActivity : AppCompatActivity(), OnClickListener {
     return if (id == R.id.action_settings) {
       true
     } else super.onOptionsItemSelected(item)
-  }
-
-  companion object {
-    private val TAG = MainActivity::class.java.simpleName
-  }
-
-  override fun onClick(v: View) {
-    val klass = when (v.id) {
-      R.id.test_file_chooser -> SecondaryActivity::class.java
-      R.id.test_js_alert -> WebAppActivity::class.java
-      R.id.test_jsi -> WebJsBindActivity::class.java
-      R.id.test_pdf -> WebPdfViewerActivity::class.java
-      else -> null
-    }
-
-    klass?.let {
-      startActivity(Intent(this, klass))
-    }
   }
 }

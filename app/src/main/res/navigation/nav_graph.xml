@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/nav_graph"
+  app:startDestination="@id/home_fragment">
+
+  <fragment
+    android:id="@+id/home_fragment"
+    android:name="zac4j.com.webapp.HomeFragment"
+    android:label="@string/app_name"
+    tools:layout="@layout/fragment_home">
+
+    <action
+      android:id="@+id/home_to_file_chooser"
+      app:destination="@id/file_chooser_fragment" />
+
+    <action
+      android:id="@+id/home_to_js_hook"
+      app:destination="@id/js_hook_fragment" />
+
+    <action
+      android:id="@+id/home_to_js_binding"
+      app:destination="@id/js_binding_fragment" />
+
+    <action
+      android:id="@+id/home_to_pdf_viewer"
+      app:destination="@id/pdf_viewer_fragment" />
+  </fragment>
+
+  <fragment
+    android:id="@+id/file_chooser_fragment"
+    android:name="zac4j.com.webapp.FileChooserFragment"
+    android:label="@string/file_chooser_title"
+    tools:layout="@layout/fragment_web_container" />
+
+  <fragment
+    android:id="@+id/js_hook_fragment"
+    android:name="zac4j.com.webapp.JsHookFragment"
+    android:label="@string/js_hook_title"
+    tools:layout="@layout/fragment_web_container" />
+
+  <fragment
+    android:id="@+id/js_binding_fragment"
+    android:name="zac4j.com.webapp.JsBindingFragment"
+    android:label="@string/js_binding_title"
+    tools:layout="@layout/fragment_js_binding" />
+
+  <fragment
+    android:id="@+id/pdf_viewer_fragment"
+    android:name="zac4j.com.webapp.PdfViewerFragment"
+    android:label="@string/pdf_viewer_title"
+    tools:layout="@layout/fragment_pdf_viewer" />
+
+</navigation>

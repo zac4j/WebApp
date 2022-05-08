@@ -1,46 +1,47 @@
-package zac4j.com.webapp;
+package zac4j.com.webapp
 
-import android.Manifest;
-import android.app.Activity;
-import android.content.pm.PackageManager;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
+import android.Manifest.permission
+import android.app.Activity
+import androidx.core.content.ContextCompat
+import android.content.pm.PackageManager
+import androidx.core.app.ActivityCompat
 
-class PermissionsDelegate {
-
-  private static final int REQUEST_CODE = 10;
-  private final Activity activity;
-
-  PermissionsDelegate(Activity activity) {
-    this.activity = activity;
+internal class PermissionsDelegate(private val activity: Activity) {
+  fun hasCameraPermission(): Boolean {
+    val permissionCheckResult = ContextCompat.checkSelfPermission(activity, permission.CAMERA)
+    return permissionCheckResult == PackageManager.PERMISSION_GRANTED
   }
 
-  boolean hasCameraPermission() {
-    int permissionCheckResult =
-        ContextCompat.checkSelfPermission(activity, Manifest.permission.CAMERA);
-    return permissionCheckResult == PackageManager.PERMISSION_GRANTED;
+  fun hasStoragePermission(): Boolean {
+    val permissionCheckResult =
+      ContextCompat.checkSelfPermission(activity, permission.WRITE_EXTERNAL_STORAGE)
+    return permissionCheckResult == PackageManager.PERMISSION_GRANTED
   }
 
-  boolean hasStoragePermission() {
-    int permissionCheckResult =
-        ContextCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE);
-    return permissionCheckResult == PackageManager.PERMISSION_GRANTED;
+  fun requestCameraPermission() {
+    ActivityCompat.requestPermissions(
+      activity, arrayOf(permission.CAMERA),
+      REQUEST_CODE
+    )
   }
 
-  void requestCameraPermission() {
-    ActivityCompat.requestPermissions(activity, new String[] { Manifest.permission.CAMERA },
-        REQUEST_CODE);
+  fun requestStoragePermission() {
+    ActivityCompat.requestPermissions(
+      activity,
+      arrayOf(permission.WRITE_EXTERNAL_STORAGE),
+      REQUEST_CODE
+    )
   }
 
-  void requestStoragePermission() {
-    ActivityCompat.requestPermissions(activity,
-        new String[] { Manifest.permission.WRITE_EXTERNAL_STORAGE }, REQUEST_CODE);
+  fun storagePermissionGranted(
+    requestCode: Int,
+    permissions: Array<String>,
+    grantResults: IntArray
+  ): Boolean {
+    return requestCode == REQUEST_CODE && grantResults.isNotEmpty() && permissions[0] == permission.WRITE_EXTERNAL_STORAGE && grantResults[0] == PackageManager.PERMISSION_GRANTED
   }
 
-  boolean storagePermissionGranted(int requestCode, String[] permissions, int[] grantResults) {
-    return requestCode == REQUEST_CODE
-        && grantResults.length >= 1
-        && permissions[0].equals(Manifest.permission.WRITE_EXTERNAL_STORAGE)
-        && grantResults[0] == PackageManager.PERMISSION_GRANTED;
+  companion object {
+    private const val REQUEST_CODE = 10
   }
 }

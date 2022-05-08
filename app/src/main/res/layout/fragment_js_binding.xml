@@ -1,38 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <data>
+
+  </data>
+
+  <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
 
-  <TextView
+    <TextView
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:gravity="center_horizontal"
       android:text="Android"
-      android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-      />
+      android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
-  <EditText
+    <EditText
       android:id="@id/jsbind_et_name_field"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:hint="@string/js_bind_enter_hint"
-      />
+      android:hint="@string/js_bind_enter_hint" />
 
-  <Button
+    <Button
       android:id="@id/jsbind_btn_jscaller"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_marginTop="@dimen/space.small"
       android:text="@string/jsbind_call_js_method"
-      style="@style/Widget.AppCompat.Button.Colored"
-      />
+      style="@style/Widget.AppCompat.Button.Colored" />
 
-  <WebView
+    <WebView
       android:id="@id/webview"
       android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      />
+      android:layout_height="match_parent" />
 
-</LinearLayout>
+  </LinearLayout>
+</layout>
